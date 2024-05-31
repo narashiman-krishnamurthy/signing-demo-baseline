@@ -421,6 +421,11 @@ const SignDemo: React.FC<{ allUsers: User[]; user: User }> = ({
                 annotation,
               }),
           },
+          isEditableAnnotation: function (annotation) {
+            // Check if the annotation is a signature
+            // console.log(!annotation.isSignature);
+            return !annotation.isSignature;
+          },
           styleSheets: [`/viewer.css`],
         }).then(async function (inst: any) {
           setInstance(inst);
